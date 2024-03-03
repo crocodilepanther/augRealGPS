@@ -4,13 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AR 2024</title>
+
+	<!-- 2024 -->
+<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
+<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+
+	<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+
+	<!--        2020
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <!--<script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script> --> <!--added later to make boxes move. adding this made the box not show up-->
     <script>
         THREEx.ArToolkitContext.baseURL = "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/"
     </script>
+	-->
 </head>
 
 <!--<script src="script.js"></script>-->   
@@ -40,9 +49,10 @@
             <a-asset-item id="babyyoda2" src="assets/babyYoda2/scene.gltf"></a-asset-item>
             
         </a-assets>    
-        
-        <a-camera gps-camera rotation-reader>
-		</a-camera>
+        <!--  2020   -->
+        <a-camera gps-camera rotation-reader> </a-camera> 
+	    <!--  2024 
+	    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>    -->
         
         <!--j-->
         <a-entity gltf-model="#babyyoda1" rotation="0 0 0" scale="2.0 2.0 2.0" gps-entity-place="longitude: -84.206275; latitude: 35.863145;"></a-entity>
@@ -62,11 +72,12 @@
         <<a-entity gltf-model="#hellokitty" rotation="90 0 0" scale="0.01 0.01 0.01" position="0 0 0" gps-entity-place="longitude: -84.206313; latitude: 35.863145;" ></a-entity>
         <a-entity gltf-model="#horse" rotation="0 0 0" scale="0.002 0.002 0.002" position="0 -10 0" gps-entity-place="longitude: -84.206275; latitude: 35.863149;" ></a-entity>
         <a-entity gltf-model="#ankylosaurus" rotation="0 0 0" scale="0.5 0.5 0.5" gps-entity-place="longitude: -84.206310; latitude: 35.863160;" ></a-entity>
-        
+
+	<a-text value="This will always face the user." look-at="[gps-camera]" scale="75 75 75" gps-entity-place="latitude: 35.863141; longitude:  -84.2062494;"></a-text>
         <!--j currenty unused-->
         <a-entity geometry="primitive: box; width: 3" material="color: red" gps-entity-place="longitude: -84.206301; latitude: 35.863148;" ></a-entity>
         <a-entity geometry="primitive: plane; width: 3; height: 2" material="color: green" gps-entity-place="longitude: -84.206249; latitude: 35.863141;" ></a-entity>
-        <a-entity gltf-model="assets/question_mark_blockSMB/scene.gltf" rotation="0 0 0" scale="0.01 0.01 0.01" gps-entity-place="longitude: -84.206249; latitude: 35.863141;" ></a-entity>  
+        <!-- <a-entity gltf-model="assets/question_mark_blockSMB/scene.gltf" rotation="0 0 0" scale="0.01 0.01 0.01" gps-entity-place="longitude: -84.206249; latitude: 35.863141;" ></a-entity> -->  
          <a-entity geometry="primitive: cylinder; radius: 1.0; height: 6" material="color: yellow" gps-entity-place="longitude:  -84.206288; latitude: 35.863151;" ></a-entity>
         <<a-entity geometry="primitive: sphere; radius: 2.2" material="color: orange" gps-entity-place="longitude: -84.206313; latitude: 35.863145;" ></a-entity>
         
